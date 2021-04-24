@@ -153,11 +153,12 @@ define(function(require) {
 					});
 				},
 				function tryGetResellerAccount(parentAccount, waterfallCallback) {
-					var results = {
+					var resellerAccountId = self.wizardGetResellerAccountId(parentAccount),
+						results = {
+							resellerAccountId: resellerAccountId,
 							parentAccount: parentAccount,
 							servicePlans: []
-						},
-						resellerAccountId = self.wizardGetResellerAccountId(parentAccount);
+						};
 
 					if (resellerAccountId === parentAccountId) {
 						self.wizardSetStore('resellerAccountId', parentAccountId);
@@ -172,7 +173,8 @@ define(function(require) {
 						generateError: false,
 						callback: function(err) {
 							var status = _.get(err, 'status'),
-								isResellerUnavailable = _.includes([ 403, 404 ], status);
+								httpStatus = _.get(err, 'httpErrorStatus', status),
+								isResellerUnavailable = _.includes([ 403, 404 ], httpStatus);
 
 							if (!isResellerUnavailable) {
 								self.wizardSetStore('resellerAccountId', resellerAccountId);
@@ -186,9 +188,9 @@ define(function(require) {
 				},
 				function getServicePlans(results, waterfallCallback) {
 					var isResellerUnavailable = results.isResellerUnavailable,
-						isCurrentAccountReseller = monster.util.isReseller(),
-						isCurrentAccountSuperDuperAdmin = monster.util.isSuperDuper(),
-						isElevatedAccount = isCurrentAccountReseller || isCurrentAccountSuperDuperAdmin,
+						isResellerAccount = monster.util.isReseller(),
+						isSuperDuperAccount = monster.util.isSuperDuper(),
+						isElevatedAccount = isResellerAccount || isSuperDuperAccount,
 						skipServicePlans = isResellerUnavailable || !isElevatedAccount;
 
 					if (skipServicePlans) {
@@ -215,6 +217,10 @@ define(function(require) {
 					defaultCountry = _.get(monster.config, 'whitelabel.countryCode'),
 					parentAccount = results.parentAccount,
 					isRealmSuffixDefined = !_.chain(monster.config).get('whitelabel.realm_suffix').isEmpty().value(),
+					noServicePlans = _.isEmpty(results.servicePlans),
+					isSuperDuperAccount = monster.util.isSuperDuper(),
+					isCurrentResellerAccount = monster.apps.auth.originalAccount.id === results.resellerAccountId,
+					masterOrResellerAccount = isSuperDuperAccount || isCurrentResellerAccount,
 					defaultData = {
 						// General Settings defaults
 						generalSettings: {
@@ -235,36 +241,47 @@ define(function(require) {
 							} : {})
 						},
 						// Usage and Call Restrictions defaults
-						usageAndCallRestrictions: {
-							trunkLimits: {
-								inbound: 0,
-								outbound: 0,
-								twoway: 0
+						usageAndCallRestrictions: _.merge(
+							{
+								callRestrictions: {
+									_all: true
+								}
 							},
-							allowPerMinuteCalls: false,
-							callRestrictions: {
-								_all: true
+							masterOrResellerAccount && {
+								trunkLimits: {
+									inbound: 0,
+									outbound: 0,
+									twoway: 0
+								},
+								allowPerMinuteCalls: false
 							}
-						},
+						),
 						// Credit Balance and Features defaults
-						creditBalanceAndFeatures: {
-							controlCenterAccess: {
-								features: {
-									user: true,
-									account: true,
-									billing: true,
-									balance: true,
-									credit: true,
-									minutes: true,
-									service_plan: true,
-									transactions: true,
-									inbound: true,
-									outbound: true,
-									twoway: true,
-									errorTracker: true
+						creditBalanceAndFeatures: _.merge(
+							{
+								controlCenterAccess: {
+									features: {
+										user: true,
+										account: true,
+										billing: true,
+										balance: true,
+										credit: true,
+										minutes: true,
+										service_plan: true,
+										transactions: true,
+										inbound: true,
+										outbound: true,
+										twoway: true,
+										errorTracker: true
+									}
+								}
+							},
+							masterOrResellerAccount && {
+								accountCredit: {
+									initialBalance: 0
 								}
 							}
-						},
+						),
 						// App Restrictions defaults
 						appRestrictions: {
 							accessLevel: 'full',
@@ -272,7 +289,7 @@ define(function(require) {
 						}
 					};
 
-				if (_.isEmpty(results.servicePlans)) {
+				if (noServicePlans) {
 					stepNames = _.without(stepNames, 'servicePlan');
 				}
 
@@ -348,6 +365,7 @@ define(function(require) {
 
 					// Set static validations
 					monster.ui.validate($template.find('form'), {
+						ignore: '.chosen-search-input', // Ignore only search input fields in jQuery Chosen controls. Don't ignore hidden fields.
 						rules: {
 							'accountInfo.accountName': {
 								required: true
@@ -380,7 +398,6 @@ define(function(require) {
 								required: true
 							}
 						},
-						ignore: [],	// Do not ignore hidden fields, which is the case for the ones that use the jQuery Chosen plugin
 						onfocusout: _.partial(self.wizardValidateGeneralSettingsFormField, $template),
 						autoScrollOnInvalid: true
 					});
@@ -495,6 +512,11 @@ define(function(require) {
 								.each(function(idx, el) {
 									$(el).text(idx + 1);
 								});
+
+						// Re-validate possible duplicates
+						$adminUserListContainer
+							.find('.admin-user-item input[type="email"][aria-invalid="true"]')
+								.valid();
 					});
 
 				// Notice that the index is not decremented, because its sole purpose is to
@@ -1298,7 +1320,11 @@ define(function(require) {
 
 			monster.waterfall([
 				function(waterfallCallback) {
+					var parentAccountId = self.wizardGetStore('parentAccountId'),
+						appsAccountId = self.wizardGetStore('resellerAccountId', parentAccountId);
+
 					self.wizardGetAppList({
+						accountId: appsAccountId,
 						success: function(appList) {
 							waterfallCallback(null, appList);
 						},
@@ -1502,6 +1528,8 @@ define(function(require) {
 		 */
 		wizardReviewFormatData: function(data) {
 			var self = this,
+				parentAccountId = self.wizardGetStore('parentAccountId'),
+				appsAccountId = self.wizardGetStore('resellerAccountId', parentAccountId),
 				wizardAppFlags = self.appFlags.wizard,
 				formattedData = _
 					.chain(data)
@@ -1513,7 +1541,8 @@ define(function(require) {
 								addressLine3: self.getTemplate({
 									name: '!' + self.i18n.active().accountsApp.wizard.steps.review.generalSettings.formats.addressLine3,
 									data: data.generalSettings.accountInfo
-								})
+								}),
+								countryName: monster.timezone.getCountryName(data.generalSettings.accountInfo.country)
 							}
 						}
 					})
@@ -1587,7 +1616,7 @@ define(function(require) {
 			formattedData.usageAndCallRestrictions.callRestrictionTypes = self.wizardGetStore('numberClassifiers');
 
 			// Set app list
-			formattedData.appRestrictions.apps = self.wizardGetStore('apps');
+			formattedData.appRestrictions.apps = self.wizardGetStore(['apps', appsAccountId]);
 
 			return formattedData;
 		},
@@ -1697,6 +1726,10 @@ define(function(require) {
 								});
 							},
 							limits: function(parallelCallback) {
+								if (!_.has(wizardData.usageAndCallRestrictions, 'trunkLimits')) {
+									return parallelCallback(null);
+								}
+
 								self.wizardRequestLimitsUpdate({
 									accountId: newAccountId,
 									limits: self.wizardSubmitGetFormattedLimits(wizardData),
@@ -1880,7 +1913,11 @@ define(function(require) {
 		 */
 		wizardSubmitGetFormattedLedgerCredit: function(wizardData) {
 			var self = this,
-				amount = _.toNumber(wizardData.creditBalanceAndFeatures.accountCredit.initialBalance);
+				amount = _
+					.chain(wizardData)
+					.get('creditBalanceAndFeatures.accountCredit.initialBalance', 0)
+					.toNumber()
+					.value();
 
 			if (amount === 0) {
 				return null;
@@ -2064,35 +2101,57 @@ define(function(require) {
 			var self = this,
 				accountId = args.accountId,
 				appRestrictions = args.appRestrictions,
-				callback = args.callback;
-
-			monster.waterfall([
-				function(waterfallCallback) {
-					if (appRestrictions.accessLevel === 'full') {
-						return waterfallCallback(null, []);
+				callback = args.callback,
+				getAllowedAppIds = function(next) {
+					if (appRestrictions.accessLevel === 'restricted') {
+						return next(null, appRestrictions.allowedAppIds);
 					}
 
+					var parentAccountId = self.wizardGetStore('parentAccountId'),
+						appsAccountId = self.wizardGetStore('resellerAccountId', parentAccountId);
+
+					// List all apps that the reseller or parent account has enabled
 					self.wizardGetAppList({
+						accountId: appsAccountId,
 						success: function(appList) {
-							waterfallCallback(null, appList);
+							next(null, _.map(appList, 'id'));
 						},
 						error: function(err) {
-							waterfallCallback(err);
+							next(err);
 						}
 					});
 				},
-				function(appList, waterfallCallback) {
-					var blacklist = _
-						.chain(appList)
-						.map('id')
-						.difference(appRestrictions.allowedAppIds)
-						.value();
+				getDefaultAppIds = function(next) {
+					self.wizardGetAppList({
+						accountId: accountId,
+						success: function(appList) {
+							next(null, _.map(appList, 'id'));
+						},
+						error: function(err) {
+							next(err);
+						}
+					});
+				};
+
+			monster.waterfall([
+				function getBlacklistAppIds(waterfallCallback) {
+					monster.parallel({
+						allowed: getAllowedAppIds,
+						defaults: getDefaultAppIds
+					}, function(err, appIds) {
+						waterfallCallback(err, _.difference(appIds.defaults, appIds.allowed));
+					});
+				},
+				function saveAppBlacklist(blacklistAppIds, waterfallCallback) {
+					if (_.isEmpty(blacklistAppIds)) {
+						return waterfallCallback(null);
+					}
 
 					self.wizardRequestResourceCreateOrUpdate({
 						resource: 'appsStore.updateBlacklist',
 						accountId: accountId,
 						data: {
-							blacklist: blacklist
+							blacklist: blacklistAppIds
 						},
 						callback: waterfallCallback
 					});
@@ -2270,18 +2329,19 @@ define(function(require) {
 		 * Gets the stored list of apps available. If the list is not stored, then it is
 		 * requested to the API.
 		 * @param  {Object} args
+		 * @param  {String} args.accountId  Account ID from which the app list will be obtained
 		 * @param  {Function} args.success  Success callback
 		 * @param  {Function} [args.error]  Optional error callback
 		 */
 		wizardGetAppList: function(args) {
 			var self = this,
-				parentAccountId = self.wizardGetStore('parentAccountId');
+				accountId = args.accountId;
 
 			self.wizardGetDataList(_.merge({
-				storeKey: 'apps',
+				storeKey: 'apps.' + accountId,
 				requestData: function(reqArgs) {
 					monster.pub('apploader.getAppList', {
-						accountId: self.wizardGetStore('resellerAccountId', parentAccountId),
+						accountId: accountId,
 						scope: 'all',
 						forceFetch: true,
 						success: function(appList) {
@@ -2419,6 +2479,7 @@ define(function(require) {
 					generateError: false,
 					error: errorCallback
 				});
+
 			self.wizardGetDataList(getDataListArgs);
 		},
 
@@ -2661,7 +2722,7 @@ define(function(require) {
 		 */
 		wizardValidateGeneralSettingsFormField: function($template, element) {
 			var $element = $(element),
-				elementName = $element.attr('name'),
+				elementName = $element.attr('name') || '',
 				isValid = $element.valid();
 
 			if (!(isValid && elementName.match(/^accountAdmins\[\d+\]\.email$/))) {
