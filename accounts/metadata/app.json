@@ -1,0 +1,49 @@
+{
+	"name": "accounts",
+	"i18n": {
+		"de-DE": {
+			"label": "Konten",
+			"description": "Die Accounts-App ermöglicht Ihnen das Erstellen, Anpassen und Verwalten Ihrer Kunden-Accounts.",
+			"extended_description": "Die Accounts-App ist das ideale Tool zum Verwalten vieler Kunden-Accounts. Unsere optimierte Benutzeroberfläche erspart Ihnen Zeit und Aufwand. Fügen Sie so viele Accounts wie erforderlich hinzu, was dank unserer echt mehrinstanzenfähigen Account-Struktur möglich ist. Weisen Sie jedem Sub-Account die gleichen Funktionen zu, wie der übergeordnete Account hat, setzen Sie Geräte und Accounts zurück, erzwingen Sie spezifische Beschränkungen oder schränken Sie ein, was für den Endbenutzer sichtbar sein soll – ganz wie Ihr Kunde es wünscht.",
+			"features": [
+				"Mehrinstanzenfähige Sub-Accounts",
+				"Nutzungssteuerung",
+				"Assistent für das Erstellen von Accounts",
+				"Anbieter- und Account-Einschränkungen",
+				"Einfache Navigation zwischen Ihren Accounts"
+			]
+		},
+		"en-US": {
+			"label": "Accounts",
+			"description": "The Accounts app allows you to create, customize, and manage of all your client accounts.",
+			"extended_description": "The Accounts app is the ideal tool for managing multiple customer accounts. Save time and reduce stress with our streamlined interface. Add as many accounts as necessary with our true multi-tenant account structure. Give each sub-account the same functions as the parent account, reset devices, accounts, enforce specific limitations or restrict what the end user sees based on what your customer desires.",
+			"features": [
+				"Multi-tenant sub accounts",
+				"Usage controls",
+				"Account creation wizard",
+				"Account limits and carrier restrictions",
+				"Easily navigate between your accounts"
+			]
+		}
+	},
+	"tags": [
+		"reseller"
+	],
+	"icon": "Accounts_app.png",
+	"api_url": "http://10.26.0.41:8000/v2",
+	"author": "2600Hz",
+	"version": "1.0",
+	"license": "-",
+	"price": 0,
+	"screenshots": [
+		"Account-AvailableApps.png",
+		"Account-Limits.png",
+		"AccountOverview.png"
+	],
+	"urls": {
+		"documentation": "{documentation_url}",
+		"howto": "{howto_video_url}"
+	},
+	"phase": "gold",
+	"pvt_type": "app"
+}

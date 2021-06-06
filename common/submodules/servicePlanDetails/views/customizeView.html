@@ -1,0 +1,26 @@
+<div class="customize-service-plan-container">
+	{{#each categories}}
+		<div class="category-wrapper{{#if hasSelected}} has-selected{{/if}}">
+			<div class="customize-details-wrapper">
+				<div class="dropdown-container">
+					<label>{{friendlierName}}</label>
+					<select name="{{@key}}" class="service-plan-selector">
+						<option value="none">- None -</option>
+						{{#each plans}}
+							<option value="{{id}}"{{#if selected}} selected{{/if}}>{{name}}</option>
+						{{/each}}
+					</select>
+				</div>
+
+				<div class="customize-override-wrapper clearfix">
+					
+				</div>
+
+				<div class="details-selected-service-plan-wrapper">
+					<span class="title">{{ @root.i18n.servicePlanDetails.planTitle }}</span>
+					<div class="details-selected-service-plan"></div>
+				</div>
+			</div>
+		</div>
+	{{/each}}
+</div>

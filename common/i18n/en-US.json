@@ -1,0 +1,1239 @@
+{
+	"servicePlanItemEditor": {
+		"keys": {
+			"phone_numbers": "Phone Numbers",
+			"number_services": "Number Services",
+			"limits": "Limits",
+			"devices": "Devices",
+			"users": "Users",
+			"branding": "Branding",
+			"ips": "IPs",
+			"ui_apps": "UI Apps",
+			"port": "Port Request",
+			"cnam": "CNAM Update",
+			"e911": "e911",
+			"ata": "ATA",
+			"cellphone": "Cell Phone",
+			"fax": "Fax",
+			"landline": "Landline",
+			"mobile": "Mobile",
+			"sip_device": "SIP Device",
+			"sip_uri": "SIP URI",
+			"smartphone": "Smartphone",
+			"softphone": "Softphone",
+			"outbound_trunks": "Outbound Trunks",
+			"inbound_trunks": "Inbound Trunks",
+			"twoway_trunks": "Twoway Trunks",
+			"did_us": "US DID",
+			"tollfree_us": "US Tollfree",
+			"rate": "Rate",
+			"activation_charge": "Activation charge",
+			"minimum": "Minimum",
+			"maximum": "Maximum",
+			"exceptions": "Exceptions",
+			"_all": "All",
+			"as": "As",
+			"user": "Standard User",
+			"admin": "Account Admin",
+			"accounts": "Accounts Manager",
+			"branding": "Branding",
+			"callflows": "Advanced Callflows",
+			"carriers": "Carriers",
+			"cluster": "Cluster Manager",
+			"debug": "Debug App",
+			"migration": "Migration",
+			"mobile": "Mobile",
+			"numbers": "Numbers Manager",
+			"pbxs": "PBX Connector",
+			"pivot": "Pivot",
+			"port": "Port Manager",
+			"provisioner": "Provisioner",
+			"reporting": "Reseller Reporting",
+			"userportal": "Userportal",
+			"voip": "Smart PBX",
+			"webhooks": "Webhooks",
+			"discounts": "Discounts",
+			"maximum": "Maximum",
+			"per-minute-voip": "Per Minute VoIP",
+			"mobile_data": "Mobile Data (100mB)",
+			"support": "Support",
+			"markup_percentage": "Markup",
+			"markup_fixed_price": "Markup",
+			"markup_rate": "Rate"
+		},
+		"fieldSelector": {
+			"label": "Fields to configure",
+			"activationCharge": "Activation Charge",
+			"as": "Charge As",
+			"cascade": "Aggregate Counts",
+			"exceptions": "Exceptions",
+			"maximum": "Monthly Maximum",
+			"minimum": "Monthly Minimum",
+			"rate": "Rates",
+			"prorateAdditions": "Prorate Additions",
+			"prorateRemovals": "Prorate Removals",
+			"step": "Step"
+		},
+		"notApplicable": "N/A",
+		"columns": {
+			"quantity": "Quantity",
+			"yourRate": "Your Rate",
+			"customerRate": "Customer Rate",
+			"margin": "Margin",
+			"actions": "Actions"
+		},
+		"editField": {
+			"plan": {
+				"prorate": {
+					"additions": "Prorate Additions",
+					"removals": "Prorate Removals"
+				},
+				"step": {
+					"label": "Step"
+				},
+				"minimum": {
+					"label": "Monthly Minimum",
+					"subLabel": "Min. Quantity"
+				},
+				"maximum": {
+					"label": "Monthly Maximum",
+					"subLabel": "Max. Quantity"
+				},
+				"activationCharge": {
+					"label": "Apply Activation Fee"
+				},
+				"exceptions": {
+					"label": "Exclude"
+				},
+				"chargeAs": {
+					"label": "Charge As",
+					"selectChoice": "-- Select an option --"
+				},
+				"cascade": {
+					"label": "Aggregate counts across all sub-accounts",
+					"tooltip": "This powerful feature lets you decide whether to calculate pricing discounts based on the total number of items for all sub-accounts combined, or whether you want to treat each sub-account individually. <br/><br/> As an example, assume two sub-accounts have 5 devices each. When this option is checked, the system will calculate pricing based on the total of 10 devices, and any discounts for having 10 devices would be applied. When unchecked, the system will calculate pricing based on each account having 5 devices, and will then add the pricing together after calculating based on 5 devices.",
+					"help1": "Indicated by the following icon: ",
+					"help2": "When checked, pricing and discount tiers are based on the total number of items across all sub-accounts.",
+					"help3": "When unchecked, pricing is based on totals for each individual sub-account, and their total costs are then added together"
+				}
+			}
+		}
+	},
+	"accountBrowser": {
+		"missingInfo": "Missing Information",
+		"addAccount": "Add New Account",
+		"searchDatabase": "Search in every account for",
+		"__comment": "UI-1271: Updating the search link",
+		"__version": "v3.20_s3",
+		"searchReset": "Click again to clear the search",
+		"backButton": "Back to parent"
+	},
+	"numbers": {
+		"mainNumber": "Office Number",
+		"conferenceNumber": "Main Conference Number",
+		"dialogSpare": {
+			"title": "List of Spare Numbers",
+			"headline": "Spare Numbers of",
+			"headlineNoAccount": "Select numbers",
+			"noMatchingNumbers": "No numbers matched your search.",
+			"noNumberSelected": "You didn't select any number. You need to select at least one number by clicking on a number in the list.",
+			"proceed": "Add selected numbers"
+		},
+		"bulkActions": "Bulk Actions",
+		"buy": "Buy",
+		"buyNumberLinks" : {
+			"regular": "Local",
+			"tollfree": "Toll-free",
+			"vanity": "Vanity"
+		},
+		"port": "Port",
+		"assignTo": "Assign To",
+		"confirmDelete": "Are you sure you want to delete the selected numbers from your account?",
+		"delete": "Delete",
+		"deleteE911Error": {
+			"message": "The following numbers can not be delete as they are the only numbers with e911 set up for their respective accounts. You need at least one number with e911 set up on an account.",
+			"account": "Account:",
+			"numbers": "Numbers:"
+		},
+		"numbers": "Numbers",
+		"addNumbers": "Add Numbers",
+		"moveNumbers": "Move To",
+		"searchNumbers": "Search a number...",
+		"go": "Go",
+		"deleteNumbers": "Delete",
+		"successDelete": "You successfully deleted {{count}} phone number(s) from your account(s)",
+		"successMove": "You successfully moved {{count}} phone number(s) to the following account: {{ accountName }}",
+		"noSpareNumber": "There are no spare numbers in this account.",
+		"noUsedNumber": "There are no numbers used in any application for this account.",
+		"spareNumbers": "Spare Numbers",
+		"usedNumbers": "Numbers in use",
+		"helpSpareNumbers": "This shows the list of numbers not used anywhere in this account. You can assign those numbers to your sub-accounts or delete these numbers from your account.",
+		"helpUsedNumbers": "This list displays where your numbers are used. You can also see the list of numbers used by your sub-accounts.",
+		"callflow": "Smart PBX",
+		"trunkstore": "Trunking",
+		"notUsedNumber": "{{number}}: This number is not used but belongs to {{accountName}}. (Switch to Spare Numbers view to see this number)",
+		"notSpareNumber": "{{number}}: This number is not a spare number but is used by {{accountName}}. (Switch to the Numbers in Use view to see this number)",
+		"numberNotFound": "The number you searched was not found! Make sure to enter the full number as we don't allow partial searches (but the formatting doesn't matter).",
+		"dialogConfirm": {
+			"from": "From ",
+			"cancel": "Cancel",
+			"delete": {
+				"title": "Delete Numbers - Confirmation",
+				"questionPartOne": "Are you sure you want to delete ",
+				"questionPartTwo": " number(s)?",
+				"button": "Delete number(s)"
+			},
+			"move": {
+				"title": "Move Numbers - Confirmation",
+				"questionPartOne": "Are you sure you want to move ",
+				"questionPartTwo": " number(s) to ",
+				"questionPartThree": "?",
+				"button": "move number(s)"
+			}
+		},
+		"dialogAlertNowAllowed": {
+			"info": "The number you searched for exists, but you are not allowed to manage it"
+		},
+		"__comment": "UI-1219: Adding the prepend feature to numbers",
+		"__version": "v3.20_s1",
+		"prependIconHelp": "This icon means that this number will show up with a custom prepended text on your phone",
+
+		"__comment": "UI-1285: Adding the Sync Action to the Number Manager",
+		"__version": "3.19",
+		"sync": {
+			"label": "Sync",
+			"success": "You successfully re-synced the numbers with the database",
+			"help": "If you think some of the numbers are not displayed in the right category (Spare/In Use), you can use this feature to re-synchronize your numbers with the database."
+		},
+
+		"__comment": "UI-901: Delete recap popup",
+		"__version": "3.20",
+		"deleteRecapDialog": {
+			"headline": "Find below the summary of which numbers have been successfully deleted and the ones which haven't. Click on Continue to go back to the Numbers inventory.",
+			"title": "Recap of the Delete operation",
+			"continue": "Continue"
+		},
+
+		"__comment": "UI-1888: List MDNs in Numbers Manager without the ability to configure features (e911, cnam, prepend)",
+		"__version": "3.22",
+		"mobile": "Mobile Manager",
+		"mobileIconHelp": "This number is linked to a Mobile device and therefore, the only way to move it around, is by managing the corresponding device",
+
+		"__comment": "UI-1285: Adding the Add External Action to the Number Manager",
+		"__version": "3.22",
+		"addExternal": {
+			"label": "Add",
+			"help": "Add numbers to the selected account (You have access to this option because you're logged in with an account that has the wnm_allow_additions flag set to true).",
+			"dialog": {
+				"title": "Add your phone numbers to the platform",
+				"fieldText": "Input numbers to be imported",
+				"beginImport": "Begin Import",
+				"help1": "Format Example: +14157775555 (+[country code][phone number])",
+				"help2": "** If importing multiple numbers, each number must be separated by a space.",
+				"invalidNumbers": "We couldn't find any valid phone number to add to the system in the list of numbers you submitted.",
+				"forceActivate": {
+					"text": "Add and assign to account",
+					"help": "Unchecking this will only add the numbers to the numbers pool, so they can be purchased via the Number Search tool. Checking the box will add the numbers and purchase them immediately."
+				}
+			},
+			"__comment": "UI-2651: adding carrier selection to add numbers",
+			"__version": "4.1",
+			"renameCarrier": {
+				"label": "Carrier Module",
+				"customCarrierName": "Custom Carrier Module Name"
+			},
+
+			"__comment": "UI-2448: Delete recap popup",
+			"__version": "4.1",
+			"successAdd": "You successfully added phone numbers to the system!",
+			"resultsDialog": {
+				"headline": "Some of the numbers could not be added to the system. Here is the recap of which numbers were successfully added and those that weren't.",
+				"title": "Recap of the Add Number operation",
+				"continue": "Continue"
+			},
+
+			"__comment": "UI-2715: adding states to add external numbers dialog",
+			"__version": "4.1",
+			"numberState": {
+				"label": "State",
+				"default": "Default",
+				"defaultHelp": "By letting this option to default, it will create numbers with the default state used by the back-end."
+			}
+		},
+
+		"__comment": "UI-1935: Properly display a description next to a used number",
+		"__version": "3.22",
+		"unassigned": "Unassigned",
+		"callflows": "Callflows",
+
+		"__comment": "UI-: Added help for port icon",
+		"__version": "3.22",
+		"portFeatureIconHelp": "This icon means that the number is being ported to the system.",
+		"portIconHelp": "This number is in the process of being ported and will be deleted if the port fails. It only appears for setting up purposes and is not configured to handle calls",
+		"failoverIconHelp": "This icon means that you set up a failover number for this phone number",
+		"cnamOutboundIconHelp": "This icon means that you set up the Outbound Caller-ID for this phone number",
+		"cnamInboundIconHelp": "This icon means that you set up the Inbound Caller-ID for this phone number",
+		"e911IconHelp": "This icon means that you set up e911 for this phone number",
+		"localIconHelp": "This icon means that this number is a local number",
+		"notInService": "This number ({{variable}}) has not been fully activated and is not in service. You need to wait for this number to be in service to set features on it.",
+		"errorFetchingNumber": "We were unable to get information for this number ({{variable}}). Please try again later!",
+
+		"__comment": "UI-2346: add bulk api to add numbers",
+		"__version": "4.0",
+		"noRightsAddNumber": "You do not have the rights to add numbers to this account.",
+
+		"__comment": "OOB: Add title of Move Numbers popup to I18n",
+		"__version": "4.0",
+		"moveNumbersConfirmationTitle": "Move Numbers - Confirmation",
+
+		"__comment": "OOB: when group no longer exist but it's still assigned to a callflow, we need to show unknown group",
+		"__version": "4.0",
+		"unknownGroup": "Deleted Group",
+
+		"__comment": "UI-2651: Let users select carrier module when adding bulk numbers. Moving carrier modules into its own function so it can be reused by various components",
+		"__version": "4.1",
+		"numbersCarrierModule": {
+			"custom": "Custom"
+		}
+	},
+
+	"callerId": {
+		"callerIdName": "Caller ID Name",
+		"callerIdPlaceholder": "John Doe",
+		"dialogTitle": "Caller ID Name Selection",
+		"errorUpdate": "Failed to update the Caller ID for this phone number",
+		"help": {
+			"outbound": "This name will appear as your Caller ID when you make outbound calls (15 char. maximum). This request may take up to 72 hours to process.",
+			"inbound": "If you turn on this feature, the Caller's Name will appear in your Caller ID when you receive incoming calls."
+		},
+		"label": "Caller-ID",
+		"successCnam": "You successfully updated the Caller-ID of {{phoneNumber}}",
+		"successRemoveCnam": "You successfully removed the Caller-ID of {{phoneNumber}}",
+		"noCallerId": "There is no Caller-ID for the phone number {{phoneNumber}}",
+		"inboundTitle": "Inbound Caller ID Name",
+		"outboundTitle": "Outbound Caller ID Name"
+	},
+
+	"e911": {
+		"email": {
+			"label": "Email Address(es)",
+			"error": "Invalid space separated address(es)",
+			"placeholder": "Space separated"
+		},
+		"addressLine1": "Address Line 1",
+		"addressLine2": "Address Line 2",
+		"city": "City",
+		"dialogTitle": "Edit 911 Location",
+		"gmapPinLabel": "Your+E911+Location",
+		"infoBox": "This information will show up to 911 emergency services when you dial it from your number.",
+		"label": "e911",
+		"lastE911Error": "You must have e911 set up on at least one number in your account. Please set it up on another number before removing it from this one.",
+		"postalCode": "Zip Code",
+		"rotatedText": "For emergency services",
+		"state": "State",
+		"successE911": "You successfully updated the e911 information of <br> {{phoneNumber}}",
+		"title": "E911 Information",
+		"verifyLocation": "Verify Location",
+		"__comment": "UI-1355: Add USPS format to addresses",
+		"__version": "v3.20_s4",
+		"invalidAddress": "Unfortunately, the address you specified wasn't found. Please double-check it and try again.",
+		"chooseAddressPopup": {
+			"title": "Choose correct address",
+			"youEntered": "You entered:",
+			"choicesAvailable": "Choices available:",
+			"content": "Several addresses matched the information you provided. Perhaps you didn't enter a street number or the building has multiple units."
+		}
+	},
+
+	"failover": {
+		"activate": "Activate",
+		"alternateNumber": "Alternate Number",
+		"errorUpdate": "Failed to update the Failover for this phone number.",
+		"failoverTitle": "Setup Failover",
+		"failoverText": "When Inbound call is unreachable, place your call to",
+		"helpFailover": "If your phone system is unreachable for any reason, we can redirect a caller to an alternate phone number or VoIP device. If the Failover number is an external number this call will cost you for both inbound and outbound.",
+		"invalidFailoverNumber": "Invalid Failover Number, please type it again",
+		"label": "Failover",
+		"noDataFailover": "No data entered, please type it again",
+		"or": "OR",
+		"removeFailover": "Remove",
+		"sipAddress": "SIP Address",
+		"successFailover": "You successfully updated the failover number of {{ phoneNumber }}",
+		"successRemove": "You successfully removed the failover settings of {{ phoneNumber }}"
+	},
+
+	"buyNumbers": {
+		"buyDialogTitle": "Buy Numbers",
+		"countrySelectLabel": "Select Country",
+		"cityInputLabel": "Search by Area Code",
+		"cityInputLabelZipCode": " or ZIP code",
+		"seqCheckboxLabel": "Display only sequential numbers.",
+		"seqInputLabel": "How many in a row?",
+		"seqNumAlert": "You must specify how many sequential numbers you want in a row (any integer between 2 and 999).",
+		"seqNumParamLabel": "for {{sequentialNumbers}} sequential numbers",
+		"areaCodeRadioLabel": "Select Area Code",
+		"noInputAlert": "You must enter an Area Code or a City name to continue!",
+		"searchResults": "Search results for",
+		"backToSearch": "Go back to search",
+		"loadingNumbers": "Loading numbers...",
+		"numberAddedSingle": "Number added",
+		"numberAddedPlural": "Numbers added",
+		"selectedNumbers": "Selected Numbers",
+		"moreInfo": "Click here for more info",
+		"tollfreeRadioLabel": "Select a tollfree prefix:",
+		"buyNumbers": "Buy Numbers",
+		"noSelectedNumAlert": "You didn't select any number to buy.",
+		"buyNumber": "Buy Number",
+		"searchAgain": "Search another number",
+		"summaryTotalNumbers": "Total selected numbers",
+		"summaryTotalCharges": "Total charges",
+		"noSearchResult": "Sorry, we could not find any number matching your request. Please try again with different parameters.",
+		"partialNumAlert": "Please enter a valid number. Partial numbers are not allowed.",
+		"areaCode": "Area Code",
+		"add": "Add",
+		"month": "Month",
+		"search": "Search",
+		"checkingMessage": "Checking numbers availability...",
+		"processingMessage1": "Activating numbers...",
+		"processingMessage2": "Please wait until the process has been completed.",
+		"unavailable": "Unavailable",
+		"unavailableMessage": "Oops! These numbers just became unavailable. Continue with the remaining available numbers or go back to search results and add more numbers.",
+		"unavailableServiceAlert": "Service currently unavailable, sorry for the inconvenience. Please try again later.",
+		"continue": "Continue",
+		"backToSearchResults": "Go back to search results",
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"confirmInfoMsg1": "Numbers will be added to your account and will be ready 15 minutes after the purchase.",
+		"confirmInfoMsg2": "Your on-file credit card will immediately be charged for recurring services. Charges will be pro-rated for your billing cycle.",
+		"vanitySearchLabel": "Search a Local or Tollfree Vanity Number:",
+		"vanitySearchInfo1": "You can search for any combination of numbers or letters.",
+		"vanitySearchInfo2": "If you can not find a specific number then feel free to send us a request. We can look through all the databases and see if we can get you the number you want.",
+		"sendRequest": "Send us a request",
+		"to": "to",
+		"partialPurchaseFailure": "Insufficient funds. Sorry, the following numbers could not be purchased:",
+		"__comment": "UI-1716: Handle errors when the ZIP code searched does not exist and show a toastr",
+		"__version": "3.22",
+		"zipCodeDoesNotExist": "The ZIP code you entered does not exist",
+		"__comment": "UI-1716: Use an external script to load the google maps script",
+		"__version": "3.22",
+		"markerAreaCodes": "Area codes for ",
+		"__comment": "UI-1210: Add singleSelect flag to allow users to only buy one number at a time",
+		"__version": "3.22",
+		"singleSelectInfo": "You can only select one number for this action."
+	},
+
+	"chooseModel": {
+		"brandHeadline": "Select the brand of the device:",
+		"deviceHeadline": "Select the model of the device:",
+		"deviceSelected": "You have selected the {{brand}} {{model}}",
+		"missingBrand": "The brand of my device is not listed here",
+		"missingDevice": "My device is not listed here",
+		"title": "Selection of the device",
+		"create": "Create Device"
+	},
+
+	"servicePlanDetails": {
+		"planLines": {
+			"phone_numbers": "Phone Numbers",
+			"number_services": "Number Services",
+			"limits": "Limits",
+			"devices": "Devices",
+			"users": "Users",
+			"__comment": "UI-1737: Adding i18n for new service plans",
+			"__version": "3.21",
+			"branding": "Branding",
+			"ips": "IPs",
+			"ui_apps": "UI Apps"
+		},
+		"noServicePlan": "No Service Plan selected.",
+		"__comment": "UI-1662: Adding minimum to customization",
+		"__version": "3.22",
+		"overrides": "Overrides",
+		"addOverrides": "Add",
+		"noOverrides": "No Overriden Values. Click on the Add link to customize this service plan!",
+		"planTitle": "Details Service Plan",
+		"keys": {
+			"phone_numbers": "Phone Numbers",
+			"number_services": "Number Services",
+			"limits": "Limits",
+			"devices": "Devices",
+			"users": "Users",
+			"branding": "Branding",
+			"ips": "IPs",
+			"ui_apps": "UI Apps",
+			"port": "Port Request",
+			"cnam": "CNAM Update",
+			"e911": "e911",
+			"ata": "ATA",
+			"cellphone": "Cell Phone",
+			"fax": "Fax",
+			"landline": "Landline",
+			"mobile": "Mobile",
+			"sip_device": "SIP Device",
+			"sip_uri": "SIP URI",
+			"smartphone": "Smartphone",
+			"softphone": "Softphone",
+			"outbound_trunks": "Outbound Trunks",
+			"inbound_trunks": "Inbound Trunks",
+			"twoway_trunks": "Twoway Trunks",
+			"did_us": "US DID",
+			"tollfree_us": "US Tollfree",
+			"rate": "Rate",
+			"activation_charge": "Activation charge",
+			"minimum": "Minimum",
+			"exceptions": "Exceptions",
+			"__comment": "UI-2046: All category",
+			"__version": "v3.22",
+			"_all": "All",
+			"as": "As",
+			"user": "Standard User",
+			"admin": "Account Admin",
+			"accounts": "Accounts Manager",
+			"branding": "Branding",
+			"callflows": "Advanced Callflows",
+			"carriers": "Carriers",
+			"cluster": "Cluster Manager",
+			"debug": "Debug App",
+			"migration": "Migration",
+			"mobile": "Mobile",
+			"numbers": "Numbers Manager",
+			"pbxs": "PBX Connector",
+			"pivot": "Pivot",
+			"port": "Port Manager",
+			"provisioner": "Provisioner",
+			"reporting": "Reseller Reporting",
+			"userportal": "Userportal",
+			"voip": "Smart PBX",
+			"webhooks": "Webhooks",
+			"discounts": "Discounts",
+			"maximum": "Maximum"
+		}
+	},
+
+	"ringingDurationControl": {
+		"distribute": "Distribute",
+		"maxDurationTooltip": "Click this box to change the maximum duration for your ring group. You must enter a number between 30 and 999.",
+		"doNotRing": "Do not ring"
+	},
+
+	"__comment": "UI-966: We want to be able to customize the carrier choice in different plances, so we build a common control",
+	"__version": "v3.20_s0",
+	"carrierSelector": {
+		"title": "Carrier",
+		"headline": "Select the carrier strategy for this account",
+		"useBlended": {
+			"friendlyName": "Use System-wide Carriers",
+			"help": "This will route the calls to the global carriers set up on the master account"
+		},
+		"useReseller": {
+			"friendlyName": "Use Partner \"{{{variable}}}\" Carriers",
+			"help": "This will route the calls to {{variable}}'s carriers.",
+			"__comment": "UI-1041: Needed to add a default message for people who aren't white labeling",
+			"__version": "v3.19_s3",
+			"defaultFriendlyName": "Use your Reseller's Carriers",
+			"defaultHelp": "This will route the calls to your Reseller's Carriers"
+		},
+		"byoc": {
+			"friendlyName": "Use Carriers defined on This Account",
+			"help": "This will route the calls to the carriers set up for this account via the Carriers app."
+		},
+		"saveSuccess": "You successfully updated the Carrier settings for this account!",
+		"huntError": "Your existing settings for your no_match route are not supported in Monster UI, don't change anything in this screen if you wish to continue to use these settings. Otherwise, select one of the option in the dropdown!"
+	},
+
+	"__comment": "UI-1219: Adding the prepend feature to numbers",
+	"__version": "v3.20_s1",
+	"numberPrepend": {
+		"dialogTitle": "Number Prepend Setup",
+		"title": "Text to prepend",
+		"label": "Prepend",
+		"help": "This text will appear before your number when receiving a call. This can be used to better identify which number was called when you use more than one.",
+		"successUpdate": "You successfully updated the prepended text for {{phoneNumber}}"
+	},
+
+	"__comment": "UI-228: Adding the numberSelector common control",
+	"__version": "v3.20_s4",
+	"numberSelector": {
+		"emptyValue": "- Select a number -",
+		"removeLink": "Remove",
+		"spareLink": "Select a spare number",
+		"buyLink": "Buy a new number",
+		"__comment": "UI-2334: adding extension selector to common control",
+		"__version": "v4.0",
+		"extensionLink": "Assign a New Extension"
+	},
+
+	"__comment": "UI-1386: Adding the numberListing common control",
+	"__version": "v3.20_s4",
+	"monsterListing": {
+		"numbers": {
+			"title": "List of Numbers",
+			"headline": "Select numbers",
+			"headlineSingle": "Select a number",
+			"noMatch": "No numbers matched your search.",
+			"noData": "No numbers are available.",
+			"noDataSelected": "You didn't select any number. You need to select at least one number by clicking on a number in the list.",
+			"okButton": "Select",
+			"cancelButton": "Cancel"
+		},
+		"devices": {
+			"title": "List of devices",
+			"headline": "Select devices",
+			"headlineSingle": "Select a device",
+			"noMatch": "No device matched your search.",
+			"noData": "No devices are available.",
+			"noDataSelected": "You didn't select any device. You need to select at least one device by clicking on an device in the list.",
+			"okButton": "Select",
+			"cancelButton": "Cancel"
+		},
+		"default": {
+			"title": "List of items",
+			"headline": "Select items",
+			"headlineSingle": "Select an item",
+			"noMatch": "No item matched your search.",
+			"noData": "No items are available.",
+			"noDataSelected": "You didn't select any item. You need to select at least one item by clicking on an item in the list.",
+			"okButton": "Select",
+			"cancelButton": "Cancel"
+		}
+	},
+
+	"__comment": "UI-2008: Create a common control to display the account's ancestors of an entity (e.g. numbers & MAC address atm)",
+	"__version": "v3.22",
+	"accountAncestors": {
+		"tooltip": "Click here to masquerade to this account",
+		"entities": {
+			"account": {
+				"text": "Here are the parents of the selected account:"
+			},
+			"number": {
+				"ownedBy": "This number was found in the sub-account {{variable}}.",
+				"usedBy": "It is currently used by {{variable}}.",
+				"notUsed": "It is currently not in use."
+			},
+			"macAddress": {
+				"ownedBy": "This MAC address was found in the sub-account {{variable}}.",
+				"usedBy": "It corresponds with the device named {{variable}}."
+			}
+		}
+	},
+
+	"__comment": "UI-2326: Adding extension manager to common controls",
+	"__version": "v4.0",
+	"extensionTools": {
+		"getNew": {
+			"title": "Get Extensions",
+			"proceedGetExtension": "Select Extension",
+			"typeNewExtension": "Type Extension to Use",
+			"table": {
+				"unNamedCallflow": "Unnamed Callflow",
+				"name": "Extensions Directory",
+				"columns": {
+					"extension": "Extension",
+					"callflowName": "Callflow Name"
+				}
+			}
+		}
+	},
+
+	"__comment": "UI-2318: building common control for media selection",
+	"__version": "v4.0",
+	"mediaSelect": {
+		"defaultLabel": "Media",
+		"emptyUploadAlert": "Empty Upload",
+		"fileTooBigAlert": "File Too Big",
+		"shoutcastURL": "Stream URL",
+		"shoutcastURLHelp": "You can type any URL including :// (http, https, shout...)",
+		"noneLabel": "- None -",
+		"silence": "Silence",
+		"shoutcastURLWarning": "WARNING: If the stream selected here attempts to be played, and is unavailable, the call may fail completely. Please make sure the stream you use is available 24/7.",
+		"useExistingMedia": "Use Existing Media",
+		"uploadNewMedia": "Upload New Media"
+	},
+
+	"__comment": "UI-2279: Webphone strings",
+	"__version": "v4.0",
+	"webphoneSubmodule": {
+		"createADevice": "We didn't find any Webphone associated with your user, would you like to create one now?",
+		"deviceName": "Webphone"
+	},
+
+	"conferenceViewer": {
+		"actionBar": {
+			"tooltips": {
+				"lock": "Lock",
+				"unlock": "Unlock",
+				"mute": "Mute Participants",
+				"unmute": "Unmute Participants",
+				"hangup": "Hangup",
+				"userMute": "Mute",
+				"userUnMute": "Unmute",
+				"userDeaf": "Deaf",
+				"userUndeaf": "Undeaf",
+				"userKick": "Kick",
+				"add": "Invite Participants"
+			}
+		},
+		"conferenceActions": {
+			"kick": "All users have been removed from the conference"
+		},
+		"moderators": "Moderators",
+		"participants": "Participants",
+		"userActions": {
+			"mute-member": "{{name}} has been muted",
+			"unmute-member": "{{name}} has been unmuted",
+			"deaf-member": "{{name}} can no longer hear other participants",
+			"undeaf-member": "{{name}} can now hear other participants",
+			"del-member": "{{name}} has left the conference",
+			"lock": "The conference is now locked",
+			"unlock": "The conference has been unlocked"
+		},
+		"empty": "Empty",
+		"emptyModerators": "There are currently no moderators active in this conference",
+		"emptyParticipants": "There are currently no participants active in this conference",
+		"notStarted": "Not Started",
+		"refreshWebsocket": "The connection with the WebSocket restarted, refreshing the data...",
+
+		"addEndpointDialog": {
+			"users": "Users",
+			"devices": "Devices",
+			"title": "Add people to this Conference",
+			"subTitle": "Select people in the dropdown below",
+			"add": "Add",
+			"help": {
+				"title": "Info",
+				"content": "You can select multiple users or endpoints from this list. Just start typing the name of the user or the device to find it in the list and press enter to select it, repeat until you're done and click on \"Add\" to have the system invite these people to this conference!"
+			},
+			"successAdd": "You successfully invited people to this conference!"
+		}
+	},
+
+	"dragableUploads": {
+		"draganddrop": "Drag and drop files here or",
+		"browse": "browse",
+		"invalidFileFormatError": "Error! Invalid file format.",
+		"fileSizeExceded": "Your file exceeds the allow max file size ({{maxFileSize}})",
+		"tryagain": "Try again!",
+		"chooseFile": "Choose a new file",
+		"success": "Done!",
+		"cancel": "Cancel",
+		"upload": "Upload files",
+		"fileUploadLegend": "Allowed files: {{allowedFiles}}, Max file size: ({{maxFileSize}})"
+	},
+
+	"__comment": "UI-2554: Add a way to customize carrier used by number",
+	"__version": "v4.0",
+	"numberRenameCarrier": {
+		"label": "Carrier Module",
+		"help": "By selecting a module from this list, you will change the carrier module used by the system for that phone number.",
+		"dialogTitle": "Rename Carrier Module",
+		"successUpdate": "You successfully updated the carrier moduled used by {{phoneNumber}} to be {{carrierName}}",
+		"custom": "Customize",
+		"customCarrierName": "Custom Carrier Module Name"
+	},
+
+	"portListing": {
+		"tabs": {
+			"agent": "Agent",
+			"account": "Account",
+			"completed": "Completed",
+			"descendants": "Descendants",
+			"progressing": "Progressing",
+			"suspended": "Suspended"
+		},
+		"misc": {
+			"unknownUser": "Unknown User",
+			"unknownCarrier": "Unknown Carrier",
+			"portInfo": {
+				"account": "Account",
+				"winningCarrier": "Winning Carrier",
+				"refNumber": "Reference Number",
+				"name": "Request Name",
+				"status": "Status",
+				"numbers": "Numbers",
+				"dateSubmitted": "Date Submitted",
+				"submitter": "Submitter",
+				"losingCarrier": "Losing Carrier"
+			},
+			"alternateStatus": {
+				"rejected": "Rejected"
+			},
+			"status": {
+				"unconfirmed": "Resume Request",
+				"submitted": "Port Requested",
+				"pending": "Submitted to Carrier",
+				"scheduled": "Scheduled by Carrier",
+				"completed": "Completed",
+				"rejected": "Rejected - Action Required",
+				"canceled": "Canceled"
+			}
+		},
+		"filtering": {
+			"title": "Accounts",
+			"hint": "Viewing"
+		},
+		"listing": {
+			"title": "Saved for Later/Rejected Requests",
+			"customSelect": {
+				"byStatus": "View by Status",
+				"forToday": "Scheduled for Today",
+				"all": "Active Port Requests"
+			},
+			"button": "New Port Request",
+			"empty": {
+				"title": "There are no active port request for this account.",
+				"text": "Hmm... this blue button seems important..."
+			},
+			"tbody": {
+				"reference": "Ref: {{variable}}"
+			}
+		},
+		"detail": {
+			"title": "Request Status",
+			"dialog": {
+				"title": "Update Port Request Status",
+				"label": {
+					"timezone": "Timezone",
+					"current": "Current Status",
+					"new": "New Status",
+					"date": "Scheduled Date",
+					"time": "Scheduled Time",
+					"reason": "Rejection Reason"
+				},
+				"select": {
+					"status": "Choose a New Status",
+					"reason": "Select a Reason for Rejection"
+				},
+				"default": "Choose a New Status",
+				"info": {
+					"default": "You are about to change the status of this port request. Please make sure you have selected the correct new status before confirming the update.",
+					"scheduled": {
+						"one": "You selected the new status as ",
+						"two": ". Please add the scheduled date and time below."
+					},
+					"rejected": {
+						"one": "You selected the new status as ",
+						"two": ". Please add the reason why."
+					}
+				},
+				"reason": {
+					"default": "Select a reason for Rejection",
+					"submitted": "Your port request looks good to go! It has been submitted to the carrier for processing on their end.",
+					"list": {
+						"type_of_service": {
+							"label": "Type of Service",
+							"text": "Service selected (Business or Residential) is incorrect according to the current carrier's records."
+						},
+						"tn_not_portable": {
+							"label": "TN not portable",
+							"text": "This means that the phone number(s) attempting to be ported are in a non-portable status with the current carrier."
+						},
+						"porting_main_btn_follow": {
+							"label": "Porting Main BTN",
+							"text": "Porting BTN. Must provide an alternate BTN from remaining numbers on account."
+						},
+						"passcode_pin_requried_or_invalid": {
+							"label": "Passcode/PIN Required or Invalid",
+							"text": "Indicates that a passcode/PIN was not provided or incorrect on order."
+						},
+						"account_number_invalid": {
+							"label": "Account Number Invalid",
+							"text": "This means that the account number provided on the order does not match what the carrier has on file."
+						},
+						"account_number_required": {
+							"label": "Account Number Required",
+							"text": "This means that the carrier is requiring the customer to provide their account number before approving this port."
+						},
+						"invalid_auth_name": {
+							"label": "Invalid Auth Name",
+							"text": "The carrier is indicating that the name you provided is incorrect and does not match their records."
+						},
+						"name_mismatch": {
+							"label": "Name Mismatch",
+							"text": "The business or residential name on the order does not match that of the carrier’s CSR (Customer Service Record)."
+						},
+						"carrier_freeze": {
+							"label": "Carrier Freeze",
+							"text": "The EU/Customer has (at one time) requested a freeze to be placed on the account which prevents the numbers from being ported and other account changes."
+						},
+						"btn_atn_mismatch": {
+							"label": "BTN / ATN Mismatch",
+							"text": "If the BTN provided on the order does not allow the carrier to pull up the account records, they will reject it back to us indicating the BTN is incorrect."
+						},
+						"pending_order": {
+							"label": "Pending Order",
+							"text": "A current order exists on the account.  This order must be completed or closed out."
+						},
+						"number_disconnedted_not_active": {
+							"label": "Number Disconnected / Not Active",
+							"text": "The TN or the account holding the TN is considered disconnected or inactive."
+						},
+						"address_mismatch": {
+							"label": "Address Mismatch",
+							"text": "This means that the address submitted on the order does not match the address on the losing carrier’s CSR (Customer Service Record)."
+						}
+					}
+				},
+				"message": {
+					"link": "Add a Message",
+					"placeholder": "Your message here..."
+				},
+				"helpText" : {
+					"scheduled": "Ports happen during normal business hours and a specific time can not be guaranteed."
+				},
+				"ok": "Update Status"
+			},
+			"links": {
+				"view": "View Original Submission",
+				"download": "Download Attached Documents"
+			},
+			"buttons": {
+				"fix": "Fix Port Request",
+				"update": "Update Status",
+				"back": "Back to port requests",
+				"cancel": "Cancel Request",
+				"send": "Send",
+				"actionRequired": "Action Required",
+				"sendPrivate": "Private"
+			},
+			"numbers": {
+				"singular": "{{variable}} Number",
+				"plural": "{{variable}} Numbers"
+			},
+			"textarea": {
+				"placeholder": "New Message..."
+			}
+		},
+		"tabs": {
+			"account": "Account",
+			"agent": "Agent",
+			"descendants": "Descendants",
+			"suspended": "Suspended",
+			"progressing": "Progressing",
+			"completed": "Completed"
+		}
+	},
+
+	"portWizard": {
+		"loading": {
+			"title": "Saving your port request...",
+			"text": "This will take up to two minutes... thanks for your patience."
+		},
+		"fileUpload": {
+			"title": "Choose a file",
+			"hint": ".pdf format ONLY",
+			"placeholder": ".pdf",
+			"button": "Browse..."
+		},
+		"toastr": {
+			"warning": {
+				"invalidNumbers": "Invalid Numbers: {{variable}}",
+				"mimeTypes": " is not a {{variable}}",
+				"size": " exceeds the {{variable}}MB size limit"
+			}
+		},
+		"formTypes": {
+			"loa": {
+				"compact": "LoA",
+				"extended": "Letter Of Authorization"
+			},
+			"resporg": {
+				"compact": "RespOrg",
+				"extended": "Responsible Organization"
+			}
+		},
+		"buttons": {
+			"cancel": "Cancel Port Request",
+			"save": "Save & Continue Later"
+		},
+		"portInfo": {
+			"movingNumbers": {
+				"title": "We are excited you are moving numbers to our service!",
+				"text": "First, let's name this request so you can reference it in the future. Names like 'Company office local DIDs' or 'NY office numbers' can help you quickly identify this request once it is submitted or saved.",
+				"label": "Port Request Name",
+				"placeholder": "AT&T local numbers"
+			},
+			"numbersType": {
+				"text1": "What type of number will you be requesting to port?",
+				"label": {
+					"local": "U.S. Local Numbers",
+					"tollFree": "U.S. Toll-free Numbers"
+				}
+			},
+			"verifyOwner": {
+				"title": "We need to verify ownership of the numbers you wish to port.",
+				"text1": "As is required by law, please upload a bill that you have received within the last 30 days as proof that these are your numbers.",
+				"text2": "This proof of your account and ownership is required by law."
+			},
+			"buttons": {
+				"next": "Next"
+			}
+		},
+		"accountVerification": {
+			"title": "Now that your bill is uploaded, let's confirm some key information.",
+			"text": "Please make sure that the information you enter is exactly as it shows on your bill. If there are any discrepancies between your port request and your bill, carriers will automatically reject your request.",
+			"form": {
+				"legend": "Account Verification",
+				"text": "Certain carriers also use an Account Number, a Personal Identification Number (PIN), and/also a Billing Telephone Number (BTN) to identify accounts. If your account contains either of these, you must provide them here.",
+				"label": {
+					"carrier": "Carrier",
+					"accountName": "Account Name on Bill",
+					"billingAddress": "Service Address",
+					"billVerification": "Recent Bill Verification",
+					"acknowledgeBill": "I acknowledge the date on this bill is within the last 30 days",
+					"accountNumber": "Account Number",
+					"pin": "PIN",
+					"btn": "BTN"
+				},
+				"placeholder": {
+					"streetNumber": "Street Number",
+					"streetName": "Street Name",
+					"streetType": "Street Type",
+					"city": "City",
+					"state": "State",
+					"zip": "ZIP Code",
+					"preDir": "Street Pre-Direction",
+					"postDir": "Street Post-Direction",
+					"extended_address": "Address Line 2"
+				}
+			},
+			"buttons": {
+				"next": "Next - Select Numbers"
+			}
+		},
+		"addNumbers": {
+			"title": "Enter the numbers you wish to port from the bill.",
+			"text1": "To avoid delays ensure you only enter {{variable}} that belong to the bill you uploaded.",
+			"text2": "If you wish you can add multiple numbers at once by separating them by a single space.",
+			"text3": "Enter each number without any parentheses, dashes or spaces.",
+			"textarea": {
+				"link": "Add More Numbers",
+				"legend": "Numbers to Port from Bill",
+				"button": "Add Numbers"
+			},
+			"list": {
+				"title": "Numbers on This Port Request",
+				"text": "You have not added any numbers to your port request yet."
+			},
+			"portion": {
+				"errorMessage": "It looks like you selected your current account's BTN as a number to be ported. This will cause this port request to be denied from the carrier unless you specify the nature of these numbers below.",
+				"text1": "Do these numbers make up the entire current account per your bill?",
+				"text2": "Or do these numbers make up only a select portion of numbers?",
+				"selection": {
+					"full": "Full Account Port",
+					"portion": "Portion Of Numbers"
+				}
+			},
+			"btn": {
+				"title": "Partial Port Additional Requirements",
+				"text": "Because you have selected to port your current account's BTN and your request will consist of only a portion of your account's numbers, you will need to choose a new BTN for that carrier or they will reject your request to port these numbers.",
+				"label": "New BTN"
+			},
+			"buttons": {
+				"next": {
+					"manual": {
+						"loa": "Next - LoA Form",
+						"resporg": "Next - RespOrg Form"
+					},
+					"eSign": {
+						"loa": "Next - LoA Form (E-sign enabled on account)",
+						"resporg": "Next - RespOrg Form (E-sign enabled on account)"
+					}
+				}
+			}
+		},
+		"uploadForm": {
+			"title": "We'll need a signed copy of your {{variable}}",
+			"text": "Please download the pre-generated {{variable}} form, double check the info is correct and sign it, then re-upload it.",
+			"link": "Learn more about {{variable}}'s' here.",
+			"download": {
+				"title": "Step 1",
+				"button": "Download {{variable}}"
+			},
+			"doubleCheck": {
+				"title": "Step 2",
+				"text": "Double check all the info and numbers on your {{variable}} to confirm that they are correct, and then sign your {{variable}} form."
+			},
+			"upload": {
+				"title": "Step 3",
+				"text": "Upload your {{variable}} form",
+				"format": ".pdf format ONLY"
+			},
+			"signee": {
+				"label": {
+					"name": "Signee Name",
+					"date": "Signing Date"
+				}
+			},
+			"button": "Next - Notifications & Scheduling"
+		},
+		"signForm": {
+			"title": "For your convenience, you will be able to electronically sign you {{variable}}.",
+			"text": "Please review your {{variable}} form below, and then e-sign it before continuing on with this port request.",
+			"button": "Next - Notifications & Scheduling"
+		},
+		"portNotify": {
+			"title": "Let us know who to notify of changes and choose a desired port date.",
+			"text": "Please fill out the last bits of information below.",
+			"email": {
+				"text1": "Who should we notify when the status of this port request changes?",
+				"text2": "(Changes can be status updates or notifications requiring further action).",
+				"label": "Notify by Email"
+			},
+			"target": {
+				"text1": "When would you like this port to occur?",
+				"text2": "Please note that we cannot guarantee this date, but will keep you notified of any changes or updates.",
+				"text3": "Port requests can take anywhere from 3 to 30 days, depending on the carrier.",
+				"label": "Target Date"
+			},
+			"button": "Next - Review Port Request"
+		},
+		"portSubmit": {
+			"title": "You're almost ready to submit your request to port {{variable}} numbers.",
+			"text": "Please review you request and acknowledge the four (4) statements below. When you are ready, go ahead and submit your port request.",
+			"review": {
+				"title": "Port Request Review",
+				"label": {
+					"name": "Port Request Name",
+					"amount": "Amount of Ported Numbers",
+					"requested": "Requested On",
+					"scheduled": "Scheduled Date of Port"
+				}
+			},
+			"agree": {
+				"title": "IMPORTANT! Please understand and agree:",
+				"label": {
+					"service": "I will not cancel my old service until after the numbers are completely transfered",
+					"canceled": "I understand any other numbers on the old account may be canceled by the old provider",
+					"fee": "I understand my old carrier may charge an early termination fee",
+					"standard": "There are standard phone numbers, not featured (like star-ring)"
+				}
+			},
+			"button": "Submit This Port Request"
+		},
+		"errorDialog": {
+			"label": "The port request has some problems that need to be addressed before submit:"
+		},
+		"errors": {
+			"number_is_on_a_port_request_already": "One or more phone numbers are already included in port requests: {{variable}}",
+			"number_exists_on_the_system_already": "One or more phone numbers already exist in the system: {{variable}}",
+			"too_few_properties": "Insufficient data at: {{variable}}",
+			"unknown_error": "Unknown error at: {{variable}}",
+			"wrong_format": "Invalid data at: {{variable}}"
+		}
+	},
+
+	"__comment": "UI-2641",
+	"__version": "4.1",
+	"numberFeaturesMenu": {
+		"syncSuccess": "You successfully synced {{number}} with the system."
+	},
+
+	"__comment": "UI-2765",
+	"__version": "4.1",
+	"storageSelector": {
+		"mainTitle": "Your Storage Options.",
+		"subTitle": "Please select from the following storage options available on this account",
+		"select": "Use Selected Storage Option"
+	},
+
+	"__comment": "UI-2788",
+	"__version": "4.1",
+	"storagePlanManager": {
+		"changeButton": "Change Storage Option",
+		"deleteButton": "Remove Settings",
+		"noPlans": "No Plans Configured on this Account.",
+		"notConfigured": "This plan is not configured yet. Click here to choose a storage option.",
+		"mainTitleWithPlans": "It looks like this account doesn't have any storage configured for this plan yet.",
+		"subTitleWithPlans": "There are {{variable}} storage options detected on your account, please select one to enable this plan.",
+		"mainTitleNoPlans": "You don't have any connector configured on your account.",
+		"subTitleNoPlans": "You need to enable Integrations app (like AWS Connector or Google Drive Connector) in order to use a Storage Plan.",
+		"chooseButton": "Choose Storage Option",
+		"confirmChange": "Changing storage options will reset all your current folder configurations for storing saved files. If you choose to continue, you will have to reconfigure all the storage folders for this plan on this account.",
+		"confirmYes": "Yes, Change Storage Options",
+		"confirmTitle": "Warning! Are you sure?",
+		"confirmDelete": "Yes, Remove Setting",
+		"confirmDeleteText": "This will remove this Storage plan from this account.",
+		"confirmDeleteTitle": "Warning! Are you sure?",
+		"successUpdate": "Your Storage Settings were successfully updated!",
+		"successPathUpdate": "You successfully updated the path where this storage plan will store its files."
+	},
+	"navigationWizard": {
+		"buttons": {
+			"next": "Next",
+			"cancel": "Cancel",
+			"clear": "Clear",
+			"back": "Back",
+			"done": "Done"
+		},
+		"cancelDialogMessage": "Any modified data will be lost. Are you sure that you want to leave the wizard?"
+	},
+	"__comment": "UI-3147: Migrate Smart PBX user deletion to common submodule",
+	"__version": "4.3",
+	"deleteSmartUser": {
+		"__comment": "UI-2138: Delete User new Dialog",
+		"__version": "3.22",
+		"deleteDialog": {
+			"title": "Remove {{ name }} from the system",
+			"headerAdmin": "You're about to delete an ADMIN! Deleting an admin will delete his user, voicemail boxes and unassign his devices. It will also prevent them from managing this UI. Do you want to continue?",
+			"headerUser": "Deleting a user will delete this user and his Voicemail Box, and unassign the devices and numbers that were assigned to this user. Do you want to continue?",
+			"deleteUser": "Delete",
+			"deleteUserName": "Delete \"{{variable}}\"",
+			"proceed": "Proceed",
+			"deleteDevices": "Also remove this user's devices from the system",
+			"deleteDevicesHelp": "If you leave this option unchecked, we'll just unassign these devices and they will show up in the list of Spare Devices",
+			"__comment": "UI-2467: also remove conferences when deleting a user from smartpbx",
+			"__version": "4.0",
+			"deleteConferences": "Also remove this user's conferences from the system",
+			"deleteConferencesHelp": "If you leave this option unchecked, you won't be able to use the user's conference number anywhere else, as it will still be used by that conference."
+		}
+	},
+
+	"appSelector": {
+		"dialog": {
+			"title": "Select Applications",
+			"acceptButton": "Select Applications"
+		},
+		"filters": {
+			"all": "All Apps ({{variable}})",
+			"installed": "My Apps ({{variable}})",
+			"reseller": "Reseller Apps ({{variable}})",
+			"carrier": "Carrier Apps ({{variable}})",
+			"developer": "Developer Apps ({{variable}})",
+			"end_user": "End User Apps ({{variable}})",
+			"reporting": "Reporting Apps ({{variable}})",
+			"integration": "Integrations ({{variable}})",
+			"admin": "Admin Apps ({{variable}})",
+			"system_admin": "System Admin Apps ({{variable}})"
+		},
+		"noApps": {
+			"account": "There are no applications available on this account.",
+			"all": "There are no applications available.",
+			"user": "There are no applications available for the current user."
+		},
+		"search": {
+			"placeholder": "Search",
+			"noResults": "No matching results were found."
+		},
+		"selectedApps": "Applications Selected"
+	},
+
+	"numberMessaging": {
+		"titles": {
+			"sms": "SMS",
+			"mms": "MMS",
+			"dialog": "Configure Messaging"
+		},
+		"labels": {
+			"sms": "SMS Services",
+			"mms": "MMS Services",
+			"messaging": "Messaging"
+		},
+		"info": "Enable or Disable {{variable}} messaging feature for this number.",
+		"warningPanel": {
+			"title": "Action Warning",
+			"text": "This service requires a manual activation. An email will be sent to Operations to complete this action. This can take up to 72 hours"
+		},
+		"successUpdate": "You successfully updated the messaging configuration for {{phoneNumber}}"
+	}
+}

@@ -1,0 +1,256 @@
+{
+	"addAccount": "Ajouter un compte",
+	"editSettings": "Modifier",
+	"saveChanges": "Sauvegarder les changements",
+	"closeSetting": "Fermer",
+	"disable": "Désactiver",
+	"disabled": "Désactivé",
+	"active": "Actif",
+	"delete": "Supprimer",
+	"enable": "Activer",
+	"add": "Ajouter",
+	"save": "Sauvegarder",
+	"update": "Sauvegarder",
+	"none": "Aucun",
+	"month": "Mois",
+	"missingAccount": "Compte introuvable",
+	"disableAccount": "Désactiver ce compte",
+	"enableAccount": "Activer ce compte",
+	"deleteAccount": "Supprimer ce compte",
+	"useAccount": "Utiliser le compte",
+	"changesSaved": "Changements Sauvegardés!",
+	"createdOn": "Créé le",
+	"accountStatus": "État du compte",
+	"accountId": "ID du compte",
+	"accountName": "Nom du compte",
+	"accountRealm": "Royaume du compte",
+	"accountTimezone": "Fuseau horaire",
+	"accountLanguage": "Langage",
+	"accountTimezoneTitle": "Fuseau Horare & Langage",
+	"accountAdmins": "Administrateurs du compte",
+	"noAdminMessage": "Ce compte ne possède aucun administrateur",
+	"noUserMessage": "Ce compte ne possède aucun utilisateur",
+	"newAdmin": "Ajouter un nouvel administrateur",
+	"newUser": "Nouvel utilisateur",
+	"existingUser": "Utilisateur existant",
+	"autogenPassword": "Auto-générer le mot-de-passe",
+	"manuallyTypePassword": "Saisir le mot-de-passe",
+	"billingContact": {
+		"label": "Contact Facturation",
+		"name": "Nom Contact Facturation",
+		"email": "Email Contact Facturation",
+		"number": "Numéro de téléphone"
+	},
+	"technicalContact": {
+		"label": "Contact Technique",
+		"name": "Nom Contact Technique",
+		"email": "Email Contact Technique",
+		"number": "Numéro de téléphone"
+	},
+	"chargeReminder" : {
+		"line1": "Votre carte de crédit sera immédiatement débitée pour chaque changement que vous faites. Si vous avez changé des services récurrent, les nouveaux frais seront calculés au pro-rata sur votre prochain cycle de facturation.",
+		"line2": "Êtes-vous sûr de vouloir continuer?"
+	},
+	"tabTitles": {
+		"overview": "Général",
+		"servicePlans": "Abonnements",
+		"limits": "Limites",
+		"restrictions": "Restrictions",
+		"notes": "Notes",
+		"numbersFeatures": "Fonctionnalités des numéros"
+	},
+	"classifiers": {
+		"unknown": {
+			"name": "Autres",
+			"help": "Veuillez sélectionner cette option si vous souhaitez autoriser ce compte à passer des appels vers N'IMPORTE QUEL NUMERO autre que mentionnés dans la liste ci-dessus (Lorsque le format du numéro n'est pas reconnu par le système)."
+		}
+	},
+	"activeServicePlan": "Abonnement actif",
+	"servicePlanMaintenance": "Maintenance",
+	"servicePlanReconciliation": {
+		"button": "Réconcilier",
+		"tooltip": "Vérifier que les quantités d'objets facturables sont correctes."
+	},
+	"servicePlanSynchronization": {
+		"button": "Synchroniser",
+		"tooltip": "Mettre à jour les informations de facturation auprès du processeur de carte banquaire."
+	},
+	"servicePlanWizardLegend": "Choisir un abonnement pour ce compte:",
+	"servicePlanResellerOnly": "Seuls les revendeurs sont autorisés à gérer les abonnements.",
+	"trunksLegend": "Définissez les limites pour les appels entrants et sortants simultanés",
+	"twowayTrunks": "Trunks bilatéral non-limités",
+	"inboundTrunks": "Trunks entrants non-limités",
+	"outboundTrunks": "Trunks sortants non-limités",
+	"callRestrictionsLegend": "Restrictions d'appel",
+	"callRestrictionsTitle": "Ce compte peut passer des appels vers...",
+	"balanceTitle": "Gérer le solde",
+	"balancePerMinute": "Solde à-la-minute:",
+	"balanceTooltip": "Ce solde sera utilisé pour passer des appels à-la-minute (plan), des appels internationaux, et recevoir des appels de numéros verts.",
+	"addToBalance": "Ajouter au solde actuel:",
+	"allowPrepay": "Autoriser les clients à passer des appels dépassant la limite ci-dessus, et leur facturer le prix à-la-minute de l'appel",
+	"addAdminLink": {
+		"toggleOn": "Ajouter un administrateur au compte",
+		"toggleOff": "Ne pas ajouter d'administrateur"
+	},
+	"adminLabels": {
+		"firstName": "Prénom de l'administrateur",
+		"lastName": "Nom de l'administrateur",
+		"email": "Adresse e-mail de l'administrateur",
+		"emailTooltip": "Cette adresse e-mail servira de nom d'utilisateur pour se connecter à Monster-UI.",
+		"number": "Numéro de téléphone de l'administrateur",
+		"password": "Mot-de-passe de l'administrateur",
+		"confirm": "Confirmez le mot-de-passe",
+		"__comment": "UI-1169: Sending an email to newly created admins",
+		"__version": "v3.20_s3",
+		"sendCredentialsEmail": "Envoyer un email a l'administrateur avec ses informations de connexion",
+		"sendCredentialsEmailShort": "Envoyer un email avec les info de connexion"
+	},
+	"adminPlaceholders": {
+		"firstName": "Prénom",
+		"lastName": "Nom",
+		"email": "Adresse e-mail",
+		"number": "Numéro de téléphone",
+		"password": "Mot-de-passe",
+		"confirm": "Confirmation"
+	},
+	"wizardStepTitles": {
+		"setupAccount": "Configurer un compte",
+		"servicePlan": "Choisir un abonnement",
+		"limits": "Définir les limites",
+		"restrictions": "Définir les restrictions"
+	},
+	"wizardProcessingMessage1": "Traitement en cours...",
+	"wizardProcessingMessage2": "Veuillez patientez durant la création du compte.",
+	"autogenPasswordPopup": {
+		"message": "Un mot-de-passe a été auto-généré pour l'administrateur {{adminName}}. Veuillez noter ce mot-de-passe, il ne vous sera pas ré-affiché ultérieurement.",
+		"login": "Identifiant:",
+		"password": "Mot-de-passe:"
+	},
+	"toastrMessages": {
+		"servicePlanUpdateSuccess": "Abonnement actif mis à jour avec succès!",
+		"servicePlanUpdateError": "Une erreur inattendue s'est produite! Veuillez réessayer.",
+		"servicePlanReconciliationSuccess": "Réconciliation effectuée avec succès!",
+		"servicePlanReconciliationError": "Une erreur s'est produite pendant le processus de réconciliation! Veuillez réessayer plus tard.",
+		"servicePlanSynchronizationSuccess": "Synchronisation effectuée avec succès!",
+		"servicePlanSynchronizationError": "Une erreur s'est produite pendant le processus de synchronisation! Veuillez réessayer plus tard.",
+		"limitsUpdateSuccess": "Limites mises à jour avec succès!",
+		"limitsUpdateError": "Une erreur inattendue s'est produite lors de la mise à jour des limites, veuillez réessayer plus tard.",
+		"creditAddSuccess": "Crédit ajouté au solde actuel avec succès!",
+		"creditAddError": "Une erreur inattendue s'est produite lors de l'ajout de crédit, veuillez réessayer plus tard.",
+		"deleteAccountError": "Une erreur s'est produite lors de la suppression du compte, veuillez réessayer.",
+		"newAccount": {
+			"accountError": "Une erreur inattendue s'est produite lors de la création du compte.",
+			"adminError": "L'administrateur n'a pas pu être créé.",
+			"limitsError": "Une erreur s'est produite lors de la configuration des limites.",
+			"forbiddenLimitsError": "Vous n'êtes pas autorisé à configurer ces limites. Veuillez contacter votre représentant commercial.",
+			"creditError": "Une erreur s'est produite lors de l'ajout de solde au compte.",
+			"servicePlanError": "Une erreur s'est produite lors de la sélection de l'abonnement."
+		},
+		"uiRestrictionsUpdateSuccess": "Restrictions d'interface mises à jour avec succès!",
+		"uiRestrictionsUpdateError": "Une erreur inattendue s'est produite lors de la mise à jour des restrictions d'interface, veuillez réessayer plus tard.",
+		"notesUpdateSuccess": "Notes mises à jour avec succès!",
+		"notesUpdateError": "Une erreur inattendue s'est produite lors de la mise à jour des notes, veuillez réessayer plus tard.",
+		"triggerMasquerading": "Vous utilisez désormais le compte \"{{accountName}}\".",
+		"restoreMasquerading": "Vous utilisez à nouveau votre propre compte.",
+		"__comment": "UI-1498: Moved call restrictions back from limits to the account document",
+		"__version": "v3.20_s5",
+		"callRestrictionsUpdateSuccess": "Restrictions d'appel mises à jour avec succès!",
+		"callRestrictionsUpdateError": "Une erreur inattendue s'est produite lors de la mise à jour des restrictions d'appel, veuillez réessayer plus tard."
+	},
+	"uiRestrictionsLegend": "Sélectionnez ce que l'utilisateur peut voir",
+	"uiRestrictionsTooltip": "Lorsque vous cliquez sur votre nom dans le coin supérieur droit de l'écran, vous verrez un menu s'afficher. Vous pouvez restreindre l'accès à ces option en les décochant dans les permissions du compte.",
+	"uiRestrictionsMenu": {
+		"settings": "Réglages",
+		"user": "Utilisateur",
+		"account": "Compte",
+		"billing": "Facturation",
+		"creditCard": "Carte de crédit",
+		"transactions": "Transactions",
+		"servicePlan": "Abonnement",
+		"perMinute": "Par Minute",
+		"trunking": "Limite d'appels",
+		"inbound": "Entrants",
+		"outbound": "Sortants",
+		"__comment": "UI-664: New restriction for twoway trunks",
+		"__version": "v3.19_s2",
+		"twoway": "Bi-directionnel",
+		"__comment": "UI-1074: New restriction for Misc Error Tracker",
+		"__version": "v3.20_s2",
+		"errorTracker": "Historique d'erreurs UI",
+		"misc": "Divers"
+	},
+	"uiRestrictionsExtraSettings": {
+		"perMinute": {
+			"legend":"Plus de réglages",
+			"showCreditInfo":"Afficher les informations de solde",
+			"showMinutesInfo": "Afficher les minutes utilisées"
+		}
+	},
+	"validationMessages": {
+		"invalidPasswordConfirm": "Confirmation erronée."
+	},
+	"notesLegend": "Ecrivez un commentaire sur ce compte",
+	"landingContent": [
+		"Vous pouvez modifier un compte en le sélectionnant dans la liste de gauche",
+		"Ou",
+		"Créer un nouveau compte en cliquant sur le bouton \"Ajouter un compte\"."
+	],
+	"__comment": "UI-966: created common control for carrier selection",
+	"__version": "v3.20_s0",
+	"carrierTab": "Opérateur téléphonique",
+	"__comment": "UI-1171: Add a field to show the type of an account",
+	"__version": "v3.20_s2",
+	"accountType": "Type de compte",
+	"reseller": "Fournisseur",
+	"standard": "Standard",
+	"__comment": "UI-1169: Sending an email to newly created admins",
+	"__version": "v3.20_s3",
+	"sentEmailPopup": "Un email contenant les informations de connexion a été envoyé à {{email}}.",
+	"disabledAddCreditTooltip": "Braintree est requis pour ajouter du crédit. Pour plus d'informations, veuillez contacter votre administrateur.",
+	"__comment": "UI-1448: Add name of the account to be deleted in the confirm message for a better UX",
+	"__version": "v3.20_s5",
+	"deleteAccountConfirmVar": "Ce compte (\"{{accountName}}\") sera supprimé de manière permanente. Continuer?",
+	"__comment": "UI-1460: Force user to type a string before deleting an account",
+	"__version": "v3.20_s5",
+	"deleteAccountDialog": {
+		"title": "Confirmation de la suppression du compte",
+		"cancel": "Annuler",
+		"deleteAccount": "Supprimer Compte",
+		"deleteKey": "SUPPRIMER",
+		"deleteMessageIntro": "Souhaitez-vous réellement supprimer ce compte (\"{{variable}}\")? Cette action ne pourra pas être annulée par la suite.",
+		"deleteMessageExplanation": "Veuillez taper le mot \"{{variable}}\" dans la case suivante, et cliquez ensuite sur le bouton Supprimer pour continuer"
+	},
+	"__comment": "UI-1609: Add a way to Remove Credit",
+	"__version": "3.21",
+	"updateCreditDialog": {
+		"title": "Changer le montant de crédits",
+		"creditBalance": "Crédits disponibles",
+		"addCredit": "Ajouter",
+		"removeCredit": "Retirer",
+		"addCreditOne": "Ajout unique de crédits",
+		"removeCreditOne": "Retrait unique de crédits",
+		"helpAddCreditOne": "Les crédits sont utilisés pour activer certaines fonctionnalités telles que l'e911, le Caller ID etc...",
+		"helpRemoveCreditOne": "Retirer des crédits peux être utile afin de corriger une erreur faite lors d'un ajout de crédits par exemple.",
+		"placeholderAmount": "10.00"
+	},
+	"account_has_descendants": "Vous devez supprimer les sous-comptes avant de supprimer ce compte",
+	"numbersFeatures": {
+		"legend": "Activez/Désactivez les fonctionnalités des numéros",
+		"features": {
+			"e911": "E911",
+			"cnam": "CNAM"
+		}
+	},
+	"reserllerAction": "Reseller action",
+	"promoteDemoteError": "Une erreur c'est produite. Veuillez réessayer ultérieurement.",
+	"promoteAccount": {
+		"button": "Promouvoir",
+		"confirm": "Vous allerz promouvoir ce compte au status de revendeur",
+		"success": "Ce compte a été promu avec succès"
+	},
+	"demoteAccount": {
+		"button": "Rétrograder",
+		"confirm": "Vous allez reléguer ce compte au status de standard",
+		"success": "Ce compte a été relégué avec succès"
+	}
+}
