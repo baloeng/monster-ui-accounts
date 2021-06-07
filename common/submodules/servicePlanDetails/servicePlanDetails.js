@@ -32,12 +32,16 @@ define(function(require) {
 			},
 			'servicePlan.addManyOverrides': {
 				url: 'accounts/{accountId}/services/overrides',
-				verb: 'DELETE'
+				verb: 'POST'
 			},
 			'servicePlan.getFields': {
 				url: 'accounts/{accountId}/services/editable',
 				verb: 'GET'
-			}
+			},
+			'servicePlan.add': {
+				url: 'accounts/{accountId}/services/{planId}',
+				verb: 'POST'
+			},
 		},
 
 		subscribe: {
@@ -53,7 +57,6 @@ define(function(require) {
 		** callback: callback executed once we rendered the number control
 		*/
 		servicePlanDetailsRender: function(args) {
-			console.log(args);
 			var self = this,
 				container = args.container,
 				servicePlan = args.servicePlan || null,
@@ -322,16 +325,16 @@ define(function(require) {
 				if (data.current && data.current.details && data.current.details.hasOwnProperty('plans') && data.current.details.plans.hasOwnProperty(plan.id)) {
 					formattedPlan.selected = true;
 					formattedData[plan.category].hasSelected = true;
-					formattedData[plan.category].overrides = data.current.details.plans[plan.id].overrides;
+					formattedData[plan.category].overrides = data.current.details.overrides.plan;
 
-					if (data.current.details.plans[plan.id].overrides) {
-						formattedData[plan.category].overrides = data.current.details.plans[plan.id].overrides;
-					}
+					//if (data.current.details.plans[plan.id].overrides) {
+					//	formattedData[plan.category].overrides = data.current.details.plans[plan.id].overrides;
+					//}
 				}
 
 				formattedData[plan.category].plans.push(formattedPlan);
 			});
-
+			
 			return {
 				categories: formattedData,
 				selectedPlans: data.current.selectedPlans,
@@ -379,6 +382,8 @@ define(function(require) {
 					hasFields = $this.find('[data-field]').length > 0;
 
 				if (plan !== 'none') {
+					//Add planId. To be used in override API
+					formattedData.overrides["planId"] = plan;
 					formattedData.overrides[plan] = formattedData.overrides[plan] || {};
 					formattedData.overrides[plan][category] = formattedData.overrides[plan][category] || {};
 					formattedData.overrides[plan][category][key] = formattedData.overrides[plan][category][key] || {};
@@ -743,14 +748,16 @@ define(function(require) {
 		},
 
 		servicePlanDetailsAddManyOverrideSP: function(overrides, accountId, callback) {
-			var self = this;
+			var self = this,
+			overridePlanId = overrides.planId,	//actual value
+			overrideData = overrides[overridePlanId]; //remove planId from override data. Not needed for 4.3 service plan API
 
 			monster.request({
 				resource: 'servicePlan.addManyOverrides',
 				data: {
 					accountId: accountId,
 					data: {
-						overrides: overrides
+						plan: overrideData
 					}
 				},
 				success: function(data) {
@@ -764,18 +771,30 @@ define(function(require) {
 
 			// If both arrays are empty, no need to do anything
 			if (plansToAdd.length + plansToDelete.length) {
-				self.callApi({
-					resource: 'servicePlan.update',
-					data: {
-						accountId: accountId,
-						data: {
-							add: plansToAdd,
-							delete: plansToDelete
-						}
+				//delete service plan. So apparently, there's no bulk delete service plan API for v4.3
+				var parallelRequest = {};
+				_.each(plansToDelete, function(planId) {
+					parallelRequest[planId] = function(callback) {
+						self.servicePlanDetailsRemoveSP(planId, accountId, function(deleteSP) {
+							callback && callback(null, deleteSP);
+						},
+						function(data) {
+							callback(null, data);
+						});
+					};
+				});
+				//add service plan
+				parallelRequest[plansToAdd] = function(callback) {
+					self.servicePlanDetailsAddManySP(plansToAdd, accountId, function(addSP) {
+						callback && callback(null, addSP);
 					},
-					success: function(data) {
-						callback && callback(data.data);
-					}
+					function(data) {
+						callback(null, data);
+					});
+				};
+
+				monster.parallel(parallelRequest, function(err, results) {
+					callback(null, results);
 				});
 			} else {
 				callback && callback();

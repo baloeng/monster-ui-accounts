@@ -1,4 +1,3 @@
-@import "../../../css/partials/base";
 @import url('../submodules/serviceItemsListing/serviceItemsListing.scss');
 @import url('../submodules/wizard/wizard.scss');
 
@@ -1247,6 +1246,23 @@
 
 .update-credits-content-wrapper form {
 	margin-bottom: 0;
+}
+
+/* Change service plan dialog */
+.change-service-plan-dialog {
+	padding: 15px;
+	width: 700px;
+}
+
+.change-service-plan-dialog .action-bar {
+	margin-top: 15px;
+	text-align: right;
+}
+
+.change-service-plan-dialog .common-container {
+	max-height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 /* Account Manager Breadcrumbs */
