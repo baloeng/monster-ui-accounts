@@ -14,3 +14,5 @@ sup crossbar_maintenance init_app /var/www/html/monster-ui/apps/accounts https:/
 ```
 3. Update your common folder and subfolders with the common files downloaded
 4. Activate account app in the Monster UI App Store ( `/#/apps/appstore` )
+
+Ensure you clear your browser cache if you still don't see a service plan tab
