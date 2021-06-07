@@ -1,4 +1,4 @@
-# Monster UI Accounts (Cloudbased Rates GUI)
+# Monster UI Accounts
 
 Requires [Monster UI v.4.3](https://github.com/2600hz/monster-ui)
 
