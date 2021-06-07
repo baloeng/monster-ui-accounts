@@ -1,5 +1,7 @@
 # Monster UI Accounts
 
+Adds service plan tab to monster UI account app for v4.3
+
 Requires [Monster UI v.4.3](https://github.com/2600hz/monster-ui)
 
 #### Installation instructions:
