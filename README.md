@@ -10,5 +10,5 @@ Requires [Monster UI v.4.3](https://github.com/2600hz/monster-ui)
 # The Kazoo user should be able to read files from rates app directory
 sup crossbar_maintenance init_app /var/www/html/monster-ui/apps/accounts https://site.com:8443/v2/
 ```
-3. Update your common folder and subfolders with the files shared here
+3. Update your common folder and subfolders with the common files downloaded
 4. Activate account app in the Monster UI App Store ( `/#/apps/appstore` )
