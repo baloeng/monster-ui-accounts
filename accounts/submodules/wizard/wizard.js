@@ -2274,7 +2274,41 @@ define(function(require) {
 				};
 
 			if (args.resource == "services.list") {
-				monster.request(settings);
+				//this is to sort out service plan for resellers
+				//get reseller account children ID
+				self.callApi({
+					resource: 'account.listChildren',
+					data: {
+						accountId: self.accountId,
+						generateError: false
+					},
+					success: function(data) {
+						//If no child account yet, display nothing
+						if (typeof data.data[0] !== 'undefined'){
+							var childId = data.data[0].id;
+							monster.request({
+								resource: args.resource,
+								data: _.merge({
+									accountId: childId,
+									filters: {
+										paginate: false
+									},
+									generateError: _.get(args, 'generateError', true)
+								}),
+								success: function(data) {
+									args.success(data.data);
+								},
+								error: args.error
+							});
+						}else{
+							//fake a callback
+							args.success();
+						}
+					},
+					error: function(parsedError) {
+						args.callback(parsedError);
+					}
+				});
 			} else {
 				self.callApi(settings);
 			}
